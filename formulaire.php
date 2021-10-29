@@ -1,22 +1,20 @@
 <?php
 require_once 'config.php';
 
-if (empty($_POST['username'])) {
-    throw new Exception('Ma variable username est vide');
+$firstname = isset($_POST["firstname"]) ? $_POST['firstname'] : null;
+$lastname = isset($_POST["lastname"]) ? $_POST['lastname'] : null;
+$age = isset($_POST["age"]) ? $_POST['age'] : null;
+$adresse = isset($_POST["address"]) ? $_POST['address'] : null;
+$type_person = isset($_POST["person_type"]) ? $_POST["person_type"] : null;
+
+if ( empty($firstname) || empty($lastname) || empty($age) || empty($adresse) || empty($type_person) ) {
+    die('Il manque un champ à completer');
 }
-
-$username = isset($_POST["username"]) ? $_POST['username'] : null;
-$password = $_POST["password"];
-
-if ( isset($password) ) {
-    $password = $password ;
-} else {
-    $password = null;
+else {
+    print("TOP! Ma ligne est enregistrée");
 }
+$stmt = $pdo->prepare("INSERT INTO `personne` (`prenom`, `nom` , `age`, `adresse`, `type`) VALUES (:firstname, :lastname, :age, :adresse, :type_person)");
+$stmt->execute(['firstname' => $firstname , 'lastname' => $lastname, 'age' => $age, 'adresse' => $adresse, 'type_person' => $type_person,]);
 
-$email = $_POST["email"];
-
-$stmt = $pdo->prepare("INSERT INTO `personne` (`prenom` ,`password`, `email`) VALUES (:username, :mdp, :email)");
-$stmt->execute(['username' => $username , 'mdp' => $password, ':email' => $email,]);
 
 
