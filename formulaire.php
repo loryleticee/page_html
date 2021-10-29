@@ -6,7 +6,6 @@ if (empty($_POST['username'])) {
 }
 
 $username = isset($_POST["username"]) ? $_POST['username'] : null;
-
 $password = $_POST["password"];
 
 if ( isset($password) ) {
@@ -17,7 +16,7 @@ if ( isset($password) ) {
 
 $email = $_POST["email"];
 
-$stmt = $pdo->prepare("INSERT INTO `users` (`username` ,`password`, `email`) VALUES (:username, :mdp, :email)");
+$stmt = $pdo->prepare("INSERT INTO `personne` (`prenom` ,`password`, `email`) VALUES (:username, :mdp, :email)");
 $stmt->execute(['username' => $username , 'mdp' => $password, ':email' => $email,]);
 
 

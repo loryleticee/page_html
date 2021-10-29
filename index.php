@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr">
+<?php 
+    require_once './config.php';
 
+?>
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -73,15 +76,42 @@
         </section>
 
         <section>
+            <?php
+                $req = $pdo->prepare("SELECT DISTINCT `type` FROM personne");
+                $req->execute();
+                $oTypes = $req->fetchAll();
+                // foreach ($oTypes as $key => $value) { 
+                //     var_dump($key);
+                //     var_dump($value);
+                // }
+            ?>
+
             Formulaire d'inscription
-            <form action="formulaire.php" method="post">
-                <label> Username </label>
-                <input type="text" name="username" maxlength="15" required/>
-                <label> Password </label>
-                <input type="password" name="password" maxlength="255" required/>
-                <label> Email </label>
-                <input type="email" name="email" maxlength="30" required/>
-                <select name="" id=""></select>
+            <form action="formulaire.php" method="post" >
+                <label> Nom </label>
+                <input type="text" name="lastname" maxlength="15" required/>
+                </br>
+                <label> Prénom </label>
+                <input type="firstname" name="firstname" maxlength="255" required/>
+                </br>
+                <label> Age </label>
+                <input type="number" name="age" min="18" max="90" required/>
+                </br>
+                <label> Adresse </label>
+                <input type="text" name="address" maxlength="100" required/>
+                </br>
+                <label> Qualification </label>
+                </br>
+                <select name="person_type" id="person_type">
+                    <?php
+                        foreach ($oTypes as $key => $value) {
+                    ?>
+                            <option value="<?=$value['type']?>"> <?=$value['type']?> </option>
+                    <?php        
+                        }
+                    ?>
+                </select>
+
                 <input type="submit" id="validate" value="Valider" />
             </form>
         </section>
