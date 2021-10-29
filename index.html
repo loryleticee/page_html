@@ -76,11 +76,12 @@
             Formulaire d'inscription
             <form action="formulaire.php" method="post">
                 <label> Username </label>
-                <input type="text" name="username" />
+                <input type="text" name="username" maxlength="15" required/>
                 <label> Password </label>
-                <input type="password" name="password" />
+                <input type="password" name="password" maxlength="255" required/>
                 <label> Email </label>
-                <input type="email" name="email" />
+                <input type="email" name="email" maxlength="30" required/>
+                <select name="" id=""></select>
                 <input type="submit" id="validate" value="Valider" />
             </form>
         </section>
