@@ -1,0 +1,25 @@
+<section>
+    Formulaire d'inscription
+    <form action="formulaire.php" method="post" >
+        <label> Nom </label>
+        <input type="text" name="lastname" id="lastname" maxlength="15" required/>
+        </br>
+        <label> Prénom </label>
+        <input type="firstname" name="firstname" id="firstname" maxlength="255" required/>
+        </br>
+        <label> Age </label>
+        <input type="number" name="age" id="age" min="18" max="90" required/>
+        </br>
+        <label> Adresse </label>
+        <input type="text" name="address" id="address" maxlength="100" required/>
+        </br>
+        <label> Qualification </label>
+        </br>
+        <select name="person_type" id="person_type">
+           <option value="">fsfsdf</option>
+        </select>
+
+        <input type="submit" id="validate" value="Valider" />
+    </form>
+    <script src="./inscription.js"></script>
+</section>
