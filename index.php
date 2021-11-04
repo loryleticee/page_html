@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 <html lang="fr">
-<?php 
-    require_once './config.php';
-
-?>
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +8,7 @@
     <meta name="keywords" content="chaussure, e-commerce, vente, chausette">
     <meta name="author" content="Lory LÉTICÉE">
     <link rel="stylesheet" href="./style.css">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>
         Bienvenue - Accueil
     </title>
@@ -27,7 +23,11 @@
     </header>
     <main>
         <section class="position-left">
-            Ici mon menu de gauche
+            <div >
+                Ici mon menu de gauche
+            </div>
+            <button id="changeColor" onclick="changeColor()">Changer la couleur</button>
+
         </section>
 
         <section id="container">
@@ -76,40 +76,24 @@
         </section>
 
         <section>
-            <?php
-                $req = $pdo->prepare("SELECT DISTINCT `type` FROM personne");
-                $req->execute();
-                $oTypes = $req->fetchAll();
-                // foreach ($oTypes as $key => $value) { 
-                //     var_dump($key);
-                //     var_dump($value);
-                // }
-            ?>
-
             Formulaire d'inscription
             <form action="formulaire.php" method="post" >
                 <label> Nom </label>
-                <input type="text" name="lastname" maxlength="15" required/>
+                <input type="text" name="lastname" id="lastname" maxlength="15" required/>
                 </br>
                 <label> Prénom </label>
-                <input type="firstname" name="firstname" maxlength="255" required/>
+                <input type="firstname" name="firstname" id="firstname" maxlength="255" required/>
                 </br>
                 <label> Age </label>
-                <input type="number" name="age" min="18" max="90" required/>
+                <input type="number" name="age" id="age" min="18" max="90" required/>
                 </br>
                 <label> Adresse </label>
-                <input type="text" name="address" maxlength="100" required/>
+                <input type="text" name="address" id="address" maxlength="100" required/>
                 </br>
                 <label> Qualification </label>
                 </br>
                 <select name="person_type" id="person_type">
-                    <?php
-                        foreach ($oTypes as $key => $value) {
-                    ?>
-                            <option value="<?=$value['type']?>"> <?=$value['type']?> </option>
-                    <?php        
-                        }
-                    ?>
+                    
                 </select>
 
                 <input type="submit" id="validate" value="Valider" />
@@ -122,6 +106,33 @@
 </body>
 
 <footer>
+    <script>
+        function changeColor() {
+            let color = ['red', 'blue', 'green', 'rgb(100, 255, 10)',];
+            let random_number = Math.floor( Math.random() * color.length )
+            let selected_color = color[random_number];
+            document.getElementsByClassName('position-left')[0].style.backgroundColor = selected_color;
+        }
+
+        document.querySelector("#validate").addEventListener('click', function(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            submit();
+        })
+
+
+        function submit() {
+            nom = document.getElementById('lastname').value;
+            prenom = document.getElementById('firstname').value;
+            address = document.getElementById('address').value;
+            age = document.getElementById('age').value;
+            qualif = document.getElementById('person_type').value;
+
+            console.log(nom, prenom ,address ,age, qualif)
+        }
+        
+    </script>
+
     <div>
         &copy; Alaji 2021
     </div>

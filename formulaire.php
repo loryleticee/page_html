@@ -17,4 +17,14 @@ $stmt = $pdo->prepare("INSERT INTO `personne` (`prenom`, `nom` , `age`, `adresse
 $stmt->execute(['firstname' => $firstname , 'lastname' => $lastname, 'age' => $age, 'adresse' => $adresse, 'type_person' => $type_person,]);
 
 
+$name = "toto";
+echo '$name';
+
+
+function strtouppercase($parametre1) {
+    $return = strtoupper($parametre1);
+    return   $return;
+}
+
+$resultat = strtouppercase($name);
 
