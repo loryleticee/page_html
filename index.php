@@ -19,10 +19,9 @@
             Accueil
         </h1>
         <nav class="header-nav">
-            <a href="">Inscription</a>
-            <a href="#">Tableau</a>
-            <a href="#">Ajax</a>
-            <a href="#">Calculatrice</a>
+            <a href="#" onclick="showSignup()">Inscription</a>
+            <a href="#" onclick="showArray()">Tableau</a>
+            <a href="#" onclick="showMultiply()">Multiplication</a>
         </nav>
         <!-- Ici ma barre de navigation (navbar) -->
     </header>
@@ -34,8 +33,11 @@
     </main>
 </body>
 <footer class="footer">
-    <script src="./init.js"></script>
-    <script src="./function.js"></script>
+    <script src="js/array.js"></script>
+    <script src="js/function.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/inscription.js"></script>
+    <script src="js/multiply.js"></script>
     <div>
         &copy; Alaji 2021
     </div>

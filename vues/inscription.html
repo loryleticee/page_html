@@ -3,23 +3,26 @@
     <form action="formulaire.php" method="post" >
         <label> Nom </label>
         <input type="text" name="lastname" id="lastname" maxlength="15" required/>
-        </br>
         <label> Prénom </label>
         <input type="firstname" name="firstname" id="firstname" maxlength="255" required/>
-        </br>
         <label> Age </label>
         <input type="number" name="age" id="age" min="18" max="90" required/>
-        </br>
         <label> Adresse </label>
         <input type="text" name="address" id="address" maxlength="100" required/>
-        </br>
         <label> Qualification </label>
-        </br>
         <select name="person_type" id="person_type">
-           <option value="">fsfsdf</option>
         </select>
 
         <input type="submit" id="validate" value="Valider" />
     </form>
-    <script src="./inscription.js"></script>
+    <script src="js/inscription.js">
+        var qualif = ['éléve', 'professeur',];
+        console.log('tututu')
+        qualif.forEach((value, index) => {
+            let b_option = document.createElement('option');
+            b_option.setAttribute('value', value)
+            b_option.innerHTML = value
+            document.getElementById('person_type').appendChild(b_option)
+        });
+    </script>
 </section>

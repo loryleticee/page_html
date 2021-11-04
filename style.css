@@ -3,6 +3,17 @@ section {
   text-align: center;
 }
 
+form{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: center;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 a {
   color: #f79489;
   text-decoration: none;
