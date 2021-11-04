@@ -76,6 +76,18 @@
         </section>
 
         <section>
+            Multiplication
+            <form action="">
+                <input type="number" id="number_1" name="number_1" >
+                <input type="number" id="number_2" name="number_2" name="number_2">
+            </form>
+            <button id="multiply">Multiplier!</button>
+
+            <div id="resultat">  </div>
+
+        </section>
+
+        <section>
             Formulaire d'inscription
             <form action="formulaire.php" method="post" >
                 <label> Nom </label>
@@ -93,7 +105,7 @@
                 <label> Qualification </label>
                 </br>
                 <select name="person_type" id="person_type">
-                    
+                   <option value="">fsfsdf</option>
                 </select>
 
                 <input type="submit" id="validate" value="Valider" />
@@ -105,34 +117,8 @@
     </main>
 </body>
 
-<footer>
-    <script>
-        function changeColor() {
-            let color = ['red', 'blue', 'green', 'rgb(100, 255, 10)',];
-            let random_number = Math.floor( Math.random() * color.length )
-            let selected_color = color[random_number];
-            document.getElementsByClassName('position-left')[0].style.backgroundColor = selected_color;
-        }
-
-        document.querySelector("#validate").addEventListener('click', function(event) {
-            event.preventDefault();
-            event.stopPropagation();
-            submit();
-        })
-
-
-        function submit() {
-            nom = document.getElementById('lastname').value;
-            prenom = document.getElementById('firstname').value;
-            address = document.getElementById('address').value;
-            age = document.getElementById('age').value;
-            qualif = document.getElementById('person_type').value;
-
-            console.log(nom, prenom ,address ,age, qualif)
-        }
-        
-    </script>
-
+<footer class="footer">
+    <script src="./function.js"></script>
     <div>
         &copy; Alaji 2021
     </div>
