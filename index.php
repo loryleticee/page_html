@@ -19,9 +19,10 @@
             Accueil
         </h1>
         <nav class="header-nav">
-            <a href="#" onclick="showSignup()">Inscription</a>
-            <a href="#" onclick="showArray()">Tableau</a>
-            <a href="#" onclick="showMultiply()">Multiplication</a>
+            <a href="#signup" onclick="showSignup()">Inscription</a>
+            <a href="#array" onclick="showArray()">Tableau</a>
+            <a href="#multiply" onclick="showMultiply()">Multiplication</a>
+            <a href="#api" onclick="showApi()">API</a>
         </nav>
         <!-- Ici ma barre de navigation (navbar) -->
     </header>
@@ -38,8 +39,9 @@
     <script src="js/init.js"></script>
     <script src="js/inscription.js"></script>
     <script src="js/multiply.js"></script>
+    <script src="js/api.js"></script>
     <div>
-        &copy; Alaji 2021
+        <span id="copyright"> <small>&copy; Alaji 2021</small></span>
     </div>
 </footer>
 </html>

@@ -71,6 +71,10 @@ body {
   background-color: rgb(255, 110, 240);
 }
 
+#copyright {
+  color: #f9f1f0;
+}
+
 footer {
   display: flex;
   justify-content: center;

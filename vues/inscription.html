@@ -1,6 +1,6 @@
 <section>
     Formulaire d'inscription
-    <form action="formulaire.php" method="post" >
+    <form action="../model/formulaire.php" method="post" >
         <label> Nom </label>
         <input type="text" name="lastname" id="lastname" maxlength="15" required/>
         <label> Prénom </label>
@@ -15,14 +15,5 @@
 
         <input type="submit" id="validate" value="Valider" />
     </form>
-    <script src="js/inscription.js">
-        var qualif = ['éléve', 'professeur',];
-        console.log('tututu')
-        qualif.forEach((value, index) => {
-            let b_option = document.createElement('option');
-            b_option.setAttribute('value', value)
-            b_option.innerHTML = value
-            document.getElementById('person_type').appendChild(b_option)
-        });
-    </script>
+    <script src="js/inscription.js"></script>
 </section>
