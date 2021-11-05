@@ -91,6 +91,11 @@ footer {
   margin-right: auto;
 }
 
+#main-weather {
+  display: flex;
+  justify-content: center;
+}
+
 @media only screen and (min-width: 520px) {
   #container {
     background-color: #f8afa6;
