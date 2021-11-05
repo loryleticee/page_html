@@ -13,7 +13,7 @@ function showMultiply() {
 // appeler la fonction et afficher le resultat dans une div avec l'id <resultat>
 // Afficher le resultat de la fonction dans un élément html
 
-function multiply(a = 0, b = 0) {
+function multiply() {
   let numero1 = document.getElementById("number_1").value;
   let numero2 = document.getElementById("number_2").value;
   // $resultat = $number_1 * $number_2;
