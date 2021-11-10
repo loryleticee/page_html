@@ -33,7 +33,7 @@
         <section class="menu-left">
             <button id="changeColor" onclick="changeColor()">Changer la couleur</button>
         </section>
-        <div id="container"></div>
+        <div id="container"> SALUT J'AI MODFIFIÉ MON FICHIER INDEX</div>
     </main>
 </body>
 <footer class="footer">
