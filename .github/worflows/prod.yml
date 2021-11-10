@@ -14,6 +14,7 @@ jobs:
           host: ${{ secrets.SSH_SERVER_ALAJI }}
           username: ${{ secrets.SSH_USER_ALAJI }}
           password: ${{ secrets.SSH_PASSWORD_ALAJI }}
+          port: ${{ secrets.SSH_PORT_ALAJI }}
           script: |
             cd /var/www/html/page_html
             git fetch 
